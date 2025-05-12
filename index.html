@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meet'in - Publication Contextuelle</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Meet'in</h1>
+    <div class="nav-actions">
+      <span>Accueil</span>
+      <span>Notifications</span>
+      <span>Recherche</span>
+      <img src="https://randomuser.me/api/portraits/men/31.jpg" class="profile-pic" alt="Profile">
+      <button id="theme-toggle" aria-label="Changer de thème">🌙</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <main class="main">
+      <div class="status-input">
+        <img src="https://randomuser.me/api/portraits/women/65.jpg" class="profile-pic" alt="Anna">
+        <input type="text" id="post-text" placeholder="Publier des news ou ce que vous pensez">
+        <button id="publish-btn">Publier</button>
+        <button class="history-btn" id="open-context-menu">Options</button>
+      </div>
+
+      <div class="context-menu hidden" id="context-menu">
+        <h3>Options de publication</h3>
+        <label>Humeur :
+          <select id="mood-select">
+            <option value="motivé">Motivé</option>
+            <option value="stressé">Stressé</option>
+            <option value="heureux">Heureux</option>
+          </select>
+        </label>
+        <label>Image :
+          <input type="file" id="image-upload">
+        </label>
+        <label>Fond coloré :
+          <input type="color" id="background-color" value="#ffffff">
+        </label>
+        <label>Type de publication :
+          <select id="post-type-select">
+            <option value="information">Information</option>
+            <option value="suggestion">Suggestion</option>
+            <option value="ressenti">Ressenti</option>
+            <option value="proposition">Proposition</option>
+            <option value="ce-que-je-pense">Ce que je pense en ce moment</option>
+          </select>
+        </label>
+        <button id="close-menu">Fermer</button>
+      </div>
+
+      <div id="posts"></div>
+    </main>
+
+    <aside>
+      <div class="online-box">
+        <h2>En ligne</h2>
+        <div class="online-user"><span>Robert</span></div>
+        <div class="online-user"><span>Etienno</span></div>
+        <div class="online-user"><span>Olivia</span></div>
+        <div class="online-user"><span>Pascal</span></div>
+      </div>
+    </aside>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
