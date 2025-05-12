@@ -1,0 +1,217 @@
+/* style.css */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #1a1a1a;
+  --card-bg: #f5f5f5;
+  --input-bg: #ffffff;
+  --border-color: #ccc;
+  --accent-color: #0055ff;
+  --header-bg: #1f2937;
+  --light-text: #999999;
+}
+
+
+body.dark {
+  --bg-color: #1f1f1f;
+  --text-color: #f5f5f5;
+  --card-bg: #2b2b2b;
+  --input-bg: #333333;
+  --border-color: #555;
+  --accent-color: #ffd700;
+  --header-bg: #111827;
+  --light-text: #bbbbbb;
+  --important-bg: #444444;
+  --important-border: #ffd700;
+  --important-text: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+#theme-toggle {
+  font-size: 1.3rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--accent-color);
+  padding: 8px;
+}
+
+.card, .post, .online-list, .input-area, .status-input, .online-box {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+input, textarea {
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+button {
+  color: var(--text-color);
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+}
+
+header {
+  background-color: var(--header-bg);
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  font-size: 1.5em;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-actions span {
+  cursor: pointer;
+}
+
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 30px auto;
+  display: flex;
+  gap: 20px;
+}
+
+.main {
+  flex: 1;
+}
+
+.status-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.status-input input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.status-input button {
+  padding: 10px 16px;
+  background-color: #2563eb;
+  color: white;
+  border-radius: 8px;
+}
+
+.history-btn {
+  margin-left: 10px;
+  background-color: #eee;
+}
+
+.context-menu {
+  position: absolute;
+  top: 100px;
+  right: 40px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 15px;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  color: var(--text-color);
+}
+
+.context-menu.hidden {
+  display: none;
+}
+
+aside {
+  width: 240px;
+}
+
+.online-box {
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.online-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.online-user::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #00c853;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.post {
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  color: var(--text-color);
+}
+
+/* Corriger la lisibilité du contenu dynamique */
+.post div[style*="background"] {
+  color: #1a1a1a !important;
+}
+
+body.dark .post div[style*="background"] {
+  background-color: #2b2b2b !important;
+  color: #f5f5f5 !important;
+  border-left-color: #ffd700 !important;
+}
+
+.post-header div,
+.post-footer,
+.post-author,
+.post-time {
+  color: #1a1a1a !important;
+}
+
+body.dark .post-header div,
+body.dark .post-footer,
+body.dark .post-author,
+body.dark .post-time {
+  color: #f5f5f5 !important;
+}
+
+.post-footer {
+  margin-top: 10px;
+  font-size: 0.9rem;
+}
